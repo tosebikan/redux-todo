@@ -16,13 +16,17 @@ class App extends Component {
     this.setState({todo: newArr})
   }
 
+  handleSubmit = (todo) => {
+    this.setState({todo: [...this.state.todo, todo]})
+  }
+
   render(){
   return (
     <div className="App">
       <div className="Card frame">
         <Header todoLength={this.state.todo.length}/>
         <TodoList task={this.state.todo} onDelete={this.handleDelete}/>
-        <Form/>
+        <Form onSubmit={this.handleSubmit}/>
       </div>
     </div>
   );

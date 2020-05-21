@@ -3,7 +3,9 @@
   flex: 1;
   flex-direction: row;
   justify-content: space-between;
-  padding: 5px
+  padding: 5px;
+  box-shadow: 0 -5px 5px -5px #ddd;
+
 }
 .input{
   display: flex;

@@ -12,7 +12,7 @@
 .TodoList{
   margin: 0 5px;
   overflow-y: auto;
-  max-height: 200px;
+  max-height: 300px;
 }
 
 .Toggle{
