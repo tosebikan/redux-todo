@@ -3,9 +3,25 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url('https://p40.tr3.n0.cdn.getcloudapp.com/items/7Ku09jdL/2164248.jpg?v=f73670a357e67a4bbf99df58403674f5');
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://p40.tr3.n0.cdn.getcloudapp.com/items/7Ku09jdL/2164248.jpg?v=f73670a357e67a4bbf99df58403674f5') ;
   background-position: center;
   background-size: cover;
+
+}
+
+.frame{
+  width: 60vw;
+  max-width: 400px;
+}
+
+.Card{
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding:  5px;
+  box-shadow: 5px 5px 4px #888888;
+
 }
 
 .App-logo {
