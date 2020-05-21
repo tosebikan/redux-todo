@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import TodoList from './components/TodoList';
+import Form from './components/Form';
 
 class App extends Component {
   state = {
@@ -21,7 +22,7 @@ class App extends Component {
       <div className="Card frame">
         <Header todoLength={this.state.todo.length}/>
         <TodoList task={this.state.todo} onDelete={this.handleDelete}/>
-        <h3>submit</h3>
+        <Form/>
       </div>
     </div>
   );
