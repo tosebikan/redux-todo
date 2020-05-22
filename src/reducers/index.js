@@ -1,12 +1,15 @@
-import {visibilityFilters, SET_VISIBILITY_FILTER, ADD_TODO, DELETE_TODO, TOGGLE_TODO} from '../actions/constants/action-types';
-
 import {combineReducer} from 'redux';
 
+import {visibilityFilters, SET_VISIBILITY_FILTER, ADD_TODO, DELETE_TODO, TOGGLE_TODO} from '../actions/constants/action-types';
 const {SHOW_ALL} = visibilityFilters;
 
-
-
-
+function visibilityFilter(state=SHOW_ALL, action){
+  switch(action.type){
+    case SET_VISIBILITY_FILTER:
+    return action.filter
+    default: return state;
+  }
+}
 
 function todo(state =[], action){
   switch(action.type){
@@ -43,13 +46,7 @@ function todo(state =[], action){
   }
 }
 
-function visibilityFilter(state=SHOW_ALL, action){
-  switch(action.type){
-    case SET_VISIBILITY_FILTER:
-    return action.filter
-    default: return state;
-  }
-}
+
 
 const reducer = combineReducer({
   visibilityFilter,
