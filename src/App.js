@@ -8,7 +8,6 @@ import Form from './components/Form';
 class App extends Component {
   state = {
     todo: ['todo 1', 'todo 2', 'todo 3'],
-    complete: false
   }
 
   handleDelete = (index) => {
@@ -30,7 +29,8 @@ class App extends Component {
     <div className="App">
       <div className="Card frame">
         <Header todoLength={this.state.todo.length}/>
-        <TodoList task={this.state.todo} onDelete={this.handleDelete} onCheck={this.handleCheck}/>
+        <TodoList task={this.state.todo}
+         onDelete={this.handleDelete} onCheck={this.handleCheck}/>
         <Form onSubmit={this.handleSubmit}/>
       </div>
     </div>

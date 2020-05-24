@@ -17,7 +17,7 @@ store.dispatch(toggleTodo(1))
 
 store.dispatch(setVisibilityFilter(visibilityFilters.SHOW_COMPLETED))
 
-//store.dispatch(deleteTodo(0))
+store.dispatch(deleteTodo(0))
 //store.dispatch(deleteTodo(1))
 
 unsubscribe()

@@ -6,7 +6,6 @@ const Todo = ({content, onDelete, id, onCheck}) => {
   const strikeStyle = { textDecorationLine: 'line-through' };
 
   const handleCheck = (e) => {
-    //e.preventDefault();
     setComplete(!complete)
   }
   return(
