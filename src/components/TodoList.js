@@ -1,7 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './TodoList.css';
 
-const Todo = ({content, onDelete, id, onCheck}) => {
+const Todo = ({content,onDelete, id, onCheck}) => {
   const [complete, setComplete] = React.useState(false)
   const strikeStyle = { textDecorationLine: 'line-through' };
 
@@ -17,9 +18,9 @@ const Todo = ({content, onDelete, id, onCheck}) => {
   )
 }
 
-const TodoList = ({task, onDelete, onCheck}) => {
-  const todos = task.map((todo, index) => {
-    return <Todo content={todo} key={index} id={index} onDelete={onDelete} onCheck={onCheck}/>
+const TodoList = ({reduxTodo,task, onDelete, onCheck}) => {
+  const todos = reduxTodo.map((todo, index) => {
+    return <Todo content={todo.text} key={index} id={index} onDelete={onDelete} complete={todo.complete} onCheck={onCheck}/>
   })
   return (
     <div className="TodoList">
@@ -28,4 +29,10 @@ const TodoList = ({task, onDelete, onCheck}) => {
   )
 }
 
-export default TodoList;
+const mapStateToProps = state => {
+  return{
+    reduxTodo: state.todos
+  }
+}
+
+export default connect(mapStateToProps)(TodoList);
