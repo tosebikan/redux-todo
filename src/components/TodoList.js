@@ -4,12 +4,10 @@ import {deleteTodo, toggleTodo} from '../actions';
 import './TodoList.css';
 
 const Todo = ({content, onDelete, id, onCheck, reduxDelete, reduxToggle, todo}) => {
-  //const [complete, setComplete] = React.useState(false)
+
   const strikeStyle = { textDecorationLine: 'line-through' };
   console.log('todo', content)
-  {/*const handleCheck = (e) => {
-    setComplete(!complete)
-  }*/}
+
   return(
     <div className="List" onClick={()=> reduxToggle(id)} style={content.completed ? strikeStyle : null}>
       {content.text}
