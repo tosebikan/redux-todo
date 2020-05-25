@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux';
 import './Form.css';
+import {addTodo} from '../actions';
 
 class Form extends Component{
   state={
@@ -9,16 +11,21 @@ class Form extends Component{
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.state.term === "") return;
-    this.props.onSubmit(this.state.term);
+    const {reduxAdd} = this.props;
+    //addTodo(this.state.term);
+    reduxAdd(this.state.term)
     this.setState({term: ""})
-
   }
 
 
   render(){
-    //const {onSubmit} = this.props;
+    const {dispatch} = this.props;
     return(
-      <form className="Form" onSubmit={this.handleSubmit}>
+      <form className="Form" onSubmit={(e) =>{
+        e.preventDefault();
+        dispatch(addTodo(this.state.term))
+        this.setState({term: ''})
+      }}>
       <input
       type="text"
       className="input"
@@ -35,4 +42,12 @@ class Form extends Component{
   }
 }
 
-export default Form;
+{/*const mapDispatchToProps = (dispatch) => {
+  return{
+  reduxAdd: (text) => {
+    dispatch(addTodo(text))
+  }
+}
+}*/}
+
+export default connect()(Form);

@@ -6,7 +6,7 @@ import './TodoList.css';
 const Todo = ({content, onDelete, id, onCheck, reduxDelete, reduxToggle, todo}) => {
 
   const strikeStyle = { textDecorationLine: 'line-through' };
-  console.log('todo', content)
+
 
   return(
     <div className="List" onClick={()=> reduxToggle(id)} style={content.completed ? strikeStyle : null}>
