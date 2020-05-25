@@ -20,5 +20,8 @@ store.dispatch(setVisibilityFilter(visibilityFilters.SHOW_COMPLETED))
 store.dispatch(deleteTodo(0))
 //store.dispatch(deleteTodo(1))
 store.dispatch(addTodo('reduxified'));
+store.dispatch(addTodo('test'));
+store.dispatch(deleteTodo(2));
+
 
 unsubscribe()
