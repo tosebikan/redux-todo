@@ -3,11 +3,8 @@ import {connect} from 'react-redux';
 import {deleteTodo, toggleTodo} from '../actions';
 import './TodoList.css';
 
-const Todo = ({content, onDelete, id, onCheck, reduxDelete, reduxToggle, todo}) => {
-
+const Todo = ({content,id,reduxDelete, reduxToggle}) => {
   const strikeStyle = { textDecorationLine: 'line-through' };
-
-
   return(
     <div className="List" onClick={()=> reduxToggle(id)} style={content.completed ? strikeStyle : null}>
       {content.text}
@@ -17,10 +14,10 @@ const Todo = ({content, onDelete, id, onCheck, reduxDelete, reduxToggle, todo}) 
   )
 }
 
-const TodoList = ({reduxTodo, reduxToggle, task, onDelete, onCheck, reduxDelete}) => {
+const TodoList = ({reduxTodo, reduxToggle, reduxDelete}) => {
   const todos = reduxTodo.map((todo, index) => {
-    return <Todo content={todo} key={index} id={index} onDelete={onDelete} reduxDelete={reduxDelete}
-    reduxToggle={reduxToggle} complete={todo.complete} onCheck={onCheck} />
+    return <Todo content={todo} key={index} id={index} reduxDelete={reduxDelete}
+    reduxToggle={reduxToggle} complete={todo.complete}/>
   })
   return (
     <div className="TodoList">

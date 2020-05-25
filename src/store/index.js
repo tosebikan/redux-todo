@@ -1,7 +1,7 @@
 import {createStore} from 'redux';
 import reducer from '../reducers';
-import {addTodo, deleteTodo, toggleTodo, setVisibilityFilter} from '../actions'
-import {visibilityFilters} from '../actions/constants/action-types';
+//import {addTodo, deleteTodo, toggleTodo, setVisibilityFilter} from '../actions'
+//import {visibilityFilters} from '../actions/constants/action-types';
 
 const store = createStore(reducer, window.STATE_FROM_SERVER);
 
@@ -15,7 +15,7 @@ const unsubscribe = store.subscribe(() => console.log(store.getState()))
 //store.dispatch(addTodo('now'));
 //store.dispatch(toggleTodo(1))
 
-store.dispatch(setVisibilityFilter(visibilityFilters.SHOW_COMPLETED))
+//store.dispatch(setVisibilityFilter(visibilityFilters.SHOW_COMPLETED))
 
 //store.dispatch(deleteTodo(0))
 //store.dispatch(deleteTodo(1))

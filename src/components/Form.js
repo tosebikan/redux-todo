@@ -8,16 +8,6 @@ class Form extends Component{
     term: ''
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    if (this.state.term === "") return;
-    const {reduxAdd} = this.props;
-    //addTodo(this.state.term);
-    reduxAdd(this.state.term)
-    this.setState({term: ""})
-  }
-
-
   render(){
     const {dispatch} = this.props;
     return(
@@ -41,13 +31,5 @@ class Form extends Component{
     )
   }
 }
-
-{/*const mapDispatchToProps = (dispatch) => {
-  return{
-  reduxAdd: (text) => {
-    dispatch(addTodo(text))
-  }
-}
-}*/}
 
 export default connect()(Form);

@@ -11,7 +11,7 @@ function visibilityFilter(state=SHOW_ALL, action){
   }
 }
 
-function todos(state =[{text: 'implement Redux', complete: false}], action){
+function todos(state =[{text: 'complete todo app with redux', completed: false},{text: 'implement Redux', completed: true}], action){
   switch(action.type){
     case ADD_TODO:
     return[
